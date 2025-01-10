@@ -1,0 +1,37 @@
+# This GitHub workflow deploys Bundle resources (ML resource config and more)
+# defined under sunny_mlops/resources/*
+# and sunny_mlops/databricks.yml with prod deployment target configs,
+# when PRs are merged into the release branch
+name: test github actions sunny DABS
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./files
+
+env:
+  DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926",
+  DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d",
+  DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
+  
+
+jobs:
+  prod:
+    concurrency: sunny_DABS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: databricks/setup-cli@v0.221.0
+      - name: Validate Bundle For Prod
+        id: validate
+        run: |
+          databricks bundle validate
+      - name: Deploy Bundle to Prod
+        id: deploy
+        run: |
+          databricks bundle deploy

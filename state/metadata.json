@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "config": {
+    "bundle": {
+      "git": {
+        "branch": "dev",
+        "origin_url": "https://github.com/sunnysingh-db/mlops.git",
+        "commit": "17783598a0ba18dcfe0f901dc06fda118aa53ebf",
+        "bundle_root_path": "Documents/DABS/sunny_DABS_m2m/sunny_DABS"
+      }
+    },
+    "workspace": {
+      "file_path": "/Users/56ab6d40-3e23-4041-bc36-f74cd0c0d926/.bundle/sunny_DABS/dev/files"
+    },
+    "resources": {
+      "jobs": {
+        "sunny_DABS_job": {
+          "id": "258183727327090",
+          "relative_path": "resources/sunny_DABS_job.yml"
+        }
+      }
+    }
+  }
+}
