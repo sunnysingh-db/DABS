@@ -27,22 +27,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: databricks/setup-cli@v0.221.0
-      - name: Validate Bundle For Prod
+      - name: Validate Bundle For dev
         id: validate
         run: |
-          databricks bundle validate
+          databricks bundle validate -t dev
       - name: Deploy Bundle to dev
         id: deploy
         run: |
-          databricks bundle deploy
-
-targets:
-  dev:  # UC Catalog Name 
-    # mode: development
-    default: true
-    workspace:
-      # TODO: add dev workspace URL
-      host: https://adb-984752964297111.11.azuredatabricks.net
-
-
+          databricks bundle deploy -t dev
+      - name: Validate Bundle For prod
+        id: validate
+        run: |
+          databricks bundle validate -t prod
+      - name: Deploy Bundle to prod
+        id: deploy
+        run: |
+          databricks bundle deploy -t prod
 
