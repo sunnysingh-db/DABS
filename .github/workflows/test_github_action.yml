@@ -35,3 +35,14 @@ jobs:
         id: deploy
         run: |
           databricks bundle deploy
+
+targets:
+  dev:  # UC Catalog Name 
+    # mode: development
+    default: true
+    workspace:
+      # TODO: add dev workspace URL
+      host: https://adb-984752964297111.11.azuredatabricks.net
+
+
+
