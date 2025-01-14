@@ -21,7 +21,7 @@ env:
   
 
 jobs:
-  prod:
+  dev:
     concurrency: sunny_DABS
     runs-on: ubuntu-latest
     steps:
@@ -35,6 +35,12 @@ jobs:
         id: deploy
         run: |
           databricks bundle deploy -t dev
+  prod:
+    concurrency: sunny_DABS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: databricks/setup-cli@v0.221.0
       - name: Validate Bundle For prod
         id: validate
         run: |
@@ -43,4 +49,5 @@ jobs:
         id: deploy
         run: |
           databricks bundle deploy -t prod
+
 
