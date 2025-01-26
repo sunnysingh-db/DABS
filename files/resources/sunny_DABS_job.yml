@@ -1,6 +1,6 @@
 common_permissions: &permissions
   permissions:
-    - level: IS_OWNER
+    - level: CAN_VIEW
       group_name: users
     - level: IS_OWNER
       user_name: "sunny.singh"
@@ -12,8 +12,6 @@ resources:
     sunny_DABS_job:
       name: sunny_DABS_job
       permissions:
-        - level: IS_OWNER
-          group_name: users
         - level: IS_OWNER
           user_name: "sunny.singh"
       acl:
