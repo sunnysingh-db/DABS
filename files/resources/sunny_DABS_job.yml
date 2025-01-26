@@ -1,3 +1,8 @@
+common_permissions: &permissions
+  permissions:
+    - level: CAN_VIEW
+      group_name: users
+
 # The main job for sunny_DABS.
 resources:
   jobs:
