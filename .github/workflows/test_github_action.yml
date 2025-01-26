@@ -14,10 +14,10 @@ defaults:
   run:
     working-directory: ./files
 
-env:
-  DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
-  DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
-  DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
+# env:
+#   DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
+#   DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
+#   DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
   
 
 jobs:
@@ -36,6 +36,7 @@ jobs:
         run: |
           databricks bundle deploy -t dev
   prod:
+    needs: dev
     concurrency: sunny_DABS
     runs-on: ubuntu-latest
     steps:
