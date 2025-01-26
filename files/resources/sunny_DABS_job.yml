@@ -8,10 +8,7 @@ common_permissions: &permissions
 resources:
   jobs:
     sunny_DABS_job:
-      name: sunny_DABS_job
-      access_control_list:
-        - user_name: sunny.singh
-          permission_level: IS_OWNER
+      name: ${bundle.target}-sunny_DABS_job
 
       schedule:
         # Run every day at 8:37 AM
