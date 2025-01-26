@@ -3,11 +3,16 @@ common_permissions: &permissions
     - level: CAN_VIEW
       group_name: users
 
+
 # The main job for sunny_DABS.
 resources:
   jobs:
     sunny_DABS_job:
       name: sunny_DABS_job
+      acl:
+      access_control_list:
+        - user_name: "sunny.singh@databricks.com"
+          permission_level: "IS_OWNER"
 
       schedule:
         # Run every day at 8:37 AM
