@@ -18,8 +18,7 @@ targets:
     workspace:
       host: https://adb-984752964297111.11.azuredatabricks.net
     run_as:
-      user_name: sunny.singh@databricks.com
-
+      service_principal_name: 56ab6d40-3e23-4041-bc36-f74cd0c0d926
   
 
   ## Optionally, there could be a 'staging' target here.
