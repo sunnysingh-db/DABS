@@ -29,10 +29,19 @@ jobs:
       - uses: databricks/setup-cli@v0.221.0
       - name: Validate Bundle For dev
         id: validate
+        env:
+          DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
+          DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
+          DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
+  
         run: |
           databricks bundle validate -t dev
       - name: Deploy Bundle to dev
         id: deploy
+        env:
+          DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
+          DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
+          DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
         run: |
           databricks bundle deploy -t dev
   prod:
@@ -44,10 +53,18 @@ jobs:
       - uses: databricks/setup-cli@v0.221.0
       - name: Validate Bundle For prod
         id: validate
+        env:
+          DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
+          DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
+          DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
         run: |
           databricks bundle validate -t prod
       - name: Deploy Bundle to prod
         id: deploy
+        env:
+          DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
+          DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
+          DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
         run: |
           databricks bundle deploy -t prod
 
