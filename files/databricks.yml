@@ -17,10 +17,7 @@ targets:
     default: true
     workspace:
       host: https://adb-984752964297111.11.azuredatabricks.net
-    env:
-      DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
-      DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
-      DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
+
   
 
   ## Optionally, there could be a 'staging' target here.
@@ -42,8 +39,3 @@ targets:
       root_path: /Users/56ab6d40-3e23-4041-bc36-f74cd0c0d926/.bundle/${bundle.name}/${bundle.target}
     run_as:
       service_principal_name: 56ab6d40-3e23-4041-bc36-f74cd0c0d926
-    env:
-      DATABRICKS_CLIENT_ID: "56ab6d40-3e23-4041-bc36-f74cd0c0d926"
-      DATABRICKS_CLIENT_SECRET: "dosec6bb027fa5932fd492b6a7d103c3d39d"
-      DATABRICKS_HOST: "https://adb-984752964297111.11.azuredatabricks.net"
-    
