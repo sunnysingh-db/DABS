@@ -2,8 +2,6 @@ common_permissions: &permissions
   permissions:
     - level: CAN_VIEW
       group_name: users
-    - level: IS_OWNER
-      user_name: "sunny.singh"
 
 
 # The main job for sunny_DABS.
@@ -11,13 +9,9 @@ resources:
   jobs:
     sunny_DABS_job:
       name: sunny_DABS_job
-      permissions:
-        - level: IS_OWNER
-          user_name: "sunny.singh"
-      acl:
       access_control_list:
-        - user_name: "sunny.singh"
-          permission_level: "IS_OWNER"
+        - user_name: sunny.singh
+          permission_level: IS_OWNER
 
       schedule:
         # Run every day at 8:37 AM

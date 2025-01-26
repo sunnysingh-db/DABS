@@ -17,6 +17,8 @@ targets:
     default: true
     workspace:
       host: https://adb-984752964297111.11.azuredatabricks.net
+    run_as:
+      user_name: sunny.singh
 
   
 
