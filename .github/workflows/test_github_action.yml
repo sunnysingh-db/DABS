@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: databricks/setup-cli@v0.221.0
+      - uses: databricks/setup-cli@v0.258.0
       - name: Validate Bundle For dev
         id: validate
         env:
@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: databricks/setup-cli@v0.221.0
+      - uses: databricks/setup-cli@v0.258.0
       - name: Validate Bundle For prod
         id: validate
         env:
