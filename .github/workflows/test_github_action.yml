@@ -33,8 +33,8 @@ jobs:
         id: validate_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_STAGING }}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_STAGING }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_STAGING }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_STAGING }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_STAGING }}
   
         run: |
           databricks bundle validate -t dev
@@ -42,16 +42,16 @@ jobs:
         id: deploy_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_STAGING }}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_STAGING }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_STAGING }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_STAGING }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_STAGING }}
         run: |
           databricks bundle deploy -t dev
       - name: Run Bundle on dev
         id: run_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_STAGING }}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_STAGING }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_STAGING }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_STAGING }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_STAGING }}
         run: |
           databricks bundle run -t dev
   prod:
@@ -65,8 +65,8 @@ jobs:
         id: validate_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_PROD}}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_PROD }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_PROD }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_PROD }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_PROD }}
   
         run: |
           databricks bundle validate -t prod
@@ -74,16 +74,16 @@ jobs:
         id: deploy_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_PROD}}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_PROD }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_PROD }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_PROD }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_PROD }}
         run: |
           databricks bundle deploy -t prod
       - name: Run Bundle on prod
         id: run_bundle
         env:
           DATABRICKS_CLIENT_ID: ${{ env.DATABRICKS_CLIENT_ID_PROD}}
-          DATABRICKS_CLIENT_SECRET: ${{ env.$DATABRICKS_CLIENT_SECRET_PROD }}
-          DATABRICKS_HOST: ${{ env.$DATABRICKS_HOST_PROD }}
+          DATABRICKS_CLIENT_SECRET: ${{ env.DATABRICKS_CLIENT_SECRET_PROD }}
+          DATABRICKS_HOST: ${{ env.DATABRICKS_HOST_PROD }}
         run: |
           databricks bundle run -t prod
 
